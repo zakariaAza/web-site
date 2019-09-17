@@ -10,10 +10,11 @@
 
 <script>
 import Toolbar from './components/Toolbar'
+import AppFooter from './components/AppFooter'
 
 export default {
   name: 'App',
-  components: { Toolbar },
+  components: { Toolbar, AppFooter },
   data: () => ({
     //
   })

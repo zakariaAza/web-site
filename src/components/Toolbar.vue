@@ -9,8 +9,8 @@
 
       <template v-if="$vuetify.breakpoint.smAndUp">
         <v-spacer></v-spacer>
-
-    <v-menu>
+<!-- Menu -->
+    <v-menu >
       <template v-slot:activator="{ on }">
          <v-btn icon v-on="on">
           <v-icon>mdi-account</v-icon>
@@ -27,7 +27,7 @@
         </v-btn>
       </template>
     </v-toolbar>
-
+<!-- navigation-drawer -->
     <v-navigation-drawer app v-model="drawer">
      <v-card class="mx-auto" max-width="300" tile>
       <v-list >
