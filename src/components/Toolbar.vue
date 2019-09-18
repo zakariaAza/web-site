@@ -1,5 +1,6 @@
 <template>
   <nav>
+<!-- Toolbar (set up of the text)-->
     <v-toolbar>
        <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
       <v-toolbar-title>Society</v-toolbar-title>
@@ -9,7 +10,7 @@
 
       <template v-if="$vuetify.breakpoint.smAndUp">
         <v-spacer></v-spacer>
-<!-- Menu -->
+<!-- Menu (suscribe/ sign in)-->
     <v-menu >
       <template v-slot:activator="{ on }">
          <v-btn icon v-on="on">
