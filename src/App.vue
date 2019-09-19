@@ -1,18 +1,15 @@
 <template>
   <v-app>
     <v-content>
-      <router-view/>
-      <AppFooter/>
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import AppFooter from './components/AppFooter'
-
 export default {
   name: 'App',
-  components: { AppFooter },
+  components: { },
   data: () => ({
     //
   })
