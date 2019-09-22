@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import AppHome from '@/components/AppHome'
 import Suscribe from '@/components/Suscribe'
 import SignIn from '@/components/SignIn'
-import ContactUs from '@/components/ContactUs'
+import Contact from '@/components/Contact'
 
 Vue.use(Router)
 
@@ -25,9 +25,9 @@ export default new Router({
       component: SignIn
     },
     {
-      path: '/contactus',
-      name: 'ContactUs',
-      component: ContactUs
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
     }
   ]
 })

@@ -1,5 +1,7 @@
 <template>
-    <h3>A propos de Society</h3>
+    <v-containers>
+      <h1>CONTACT</h1>
+    </v-containers>
 </template>
 
 <script>

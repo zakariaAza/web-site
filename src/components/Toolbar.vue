@@ -3,11 +3,14 @@
 <!-- Toolbar (set up of the text)-->
     <v-toolbar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
-      <v-toolbar-title>Society</v-toolbar-title>
-      <v-toolbar-items v-for="title in TextItems" :key="title">
-        <v-btn text >
-          {{title.text}}
-        </v-btn>
+      <router-link to="/">
+        <v-toolbar-title class="black--text ml-8">Society</v-toolbar-title>
+      </router-link>
+      <v-toolbar-items >
+        <v-btn text class="ml-12">Aperçu</v-btn>
+        <v-btn text>Notre métier</v-btn>
+        <v-btn text>Notre equipe</v-btn>
+        <v-btn text to="/contact">Contact</v-btn>
       </v-toolbar-items>
 
       <template v-if="$vuetify.breakpoint.smAndUp">
@@ -18,14 +21,15 @@
 <!-- Menu (suscribe/ sign in)-->
     <v-menu open-on-hover bottom offset-y>
       <template v-slot:activator="{ on }">
-         <v-btn icon v-on="on">
+        <v-btn icon v-on="on">
           <v-icon>mdi-account</v-icon>
         </v-btn>
       </template>
       <v-list>
-        <v-list-item v-for="choice in LoginMenu" :key="choice" >
-            <v-list-item-title>{{ choice.text }}</v-list-item-title>
-          </v-list-item>
+        <v-list-item >
+            <v-btn text to="/suscribe">Suscribe</v-btn>
+            <v-btn text to="/signin">Sign in</v-btn>
+        </v-list-item>
       </v-list>
     </v-menu>
       </template>
@@ -47,13 +51,6 @@ export default {
   data () {
     return {
       drawer: false,
-      TextItems: [
-        { text: '' },
-        { text: 'Aperçu' },
-        { text: 'Notre métier' },
-        { text: 'Notre équipe' },
-        { text: 'Contact' }
-      ],
       LoginMenu: [
         { text: 'Suscribe' },
         { text: 'Sign in' }

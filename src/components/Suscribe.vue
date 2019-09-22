@@ -1,5 +1,5 @@
 <template>
-    <h1>Suscribe</h1>
+    <h1>SUSCRIBE</h1>
 </template>
 
 <script>
