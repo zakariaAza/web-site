@@ -1,5 +1,5 @@
 <template>
-    <h1>SUSCRIBE</h1>
+    <h1>NOTRE EQUIPE</h1>
 </template>
 
 <script>

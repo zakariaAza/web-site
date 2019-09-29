@@ -8,8 +8,8 @@
       </router-link>
       <v-toolbar-items >
         <v-btn text class="ml-12">Aperçu</v-btn>
-        <v-btn text>Notre métier</v-btn>
-        <v-btn text>Notre equipe</v-btn>
+        <v-btn text to="/metier">Notre Métier</v-btn>
+        <v-btn text to="/equipe" >Notre equipe</v-btn>
         <v-btn text to="/contact">Contact</v-btn>
       </v-toolbar-items>
 
@@ -27,7 +27,7 @@
       </template>
       <v-list>
         <v-list-item >
-            <v-btn text to="/suscribe">Suscribe</v-btn>
+            <v-btn text to="/subcribe">Subscribe</v-btn>
             <v-btn text to="/signin">Sign in</v-btn>
         </v-list-item>
       </v-list>

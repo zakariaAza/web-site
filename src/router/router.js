@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import AppHome from '@/components/AppHome'
-import Suscribe from '@/components/Suscribe'
+import Suscribe from '@/components/Subcribe'
 import SignIn from '@/components/SignIn'
 import Contact from '@/components/Contact'
+import NotreEquipe from '@/components/NotreEquipe'
+import NotreMetier from '@/components/NotreMetier'
 
 Vue.use(Router)
 
@@ -15,8 +17,8 @@ export default new Router({
       component: AppHome
     },
     {
-      path: '/suscribe',
-      name: 'SUscribe',
+      path: '/subcribe',
+      name: 'Subcribe',
       component: Suscribe
     },
     {
@@ -28,6 +30,16 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/metier',
+      name: 'metier',
+      component: NotreMetier
+    },
+    {
+      path: '/equipe',
+      name: 'equipe',
+      component: NotreEquipe
     }
   ]
 })

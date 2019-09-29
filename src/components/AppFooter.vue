@@ -1,7 +1,7 @@
 <template>
-<div id="footer" >
+<div >
   <v-app  elevation id="inspire">
-    <v-footer  color="grey darken-3" padless >
+    <v-footer  color="grey darken-3" padless  class="justify-center pl-0" inset app >
       <v-row justify="center" no-gutters >
         <v-btn v-for="link in links" :key="link" color="white" text class="my-2">
           <v-icon class="ma-1">{{link.icon}}</v-icon>
@@ -37,12 +37,3 @@ export default {
   }
 }
 </script>
-
-<style >
-#footer {
-      position:fixed;
-      width:100%;
-      height:100px;
-      bottom:0px;
-}
-</style>
