@@ -23,9 +23,9 @@ export default {
   data () {
     return {
       meetups: [
-        { imageUrl: 'https://in-storefocus.com/wp-content/uploads/2018/02/professional-services-1.png', id: 'image1', title: 'Title1 example', width: screen.width },
-        { imageUrl: 'https://www.business2community.com/wp-content/uploads/2015/01/Professional-Services-New-Business-Development.jpg', id: 'image2', title: 'Title2 example', width: screen.width },
-        { imageUrl: 'https://www.therahnuma.com/wp-content/uploads/2018/10/tech-and-innovation-1152x700.jpg', id: 'image3', title: 'Title3 example', width: screen.width }
+        { imageUrl: 'https://images.pexels.com/photos/1509428/pexels-photo-1509428.jpeg?cs=srgb&dl=camera-coffee-composition-1509428.jpg&fm=jpg', id: 'image1', title: 'Title1 example', width: screen.width },
+        { imageUrl: 'https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?cs=srgb&dl=bump-collaboration-colleagues-1068523.jpg&fm=jpg', id: 'image2', title: 'Title2 example', width: screen.width },
+        { imageUrl: 'https://cdn.pixabay.com/photo/2015/05/25/05/27/network-782707_960_720.png', id: 'image3', title: 'Title3 example', width: screen.width }
       ]
     }
   }
