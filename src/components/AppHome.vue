@@ -1,13 +1,15 @@
 <template>
     <div>
         <Carousel/>
+        <AppFooter/>
     </div>
 </template>
 
 <script>
 import Carousel from './Carousel'
+import AppFooter from './AppFooter'
 
 export default {
-  components: { Carousel }
+  components: { AppFooter, Carousel }
 }
 </script>

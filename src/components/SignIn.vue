@@ -1,6 +1,6 @@
 <template>
-  <v-containers class="pt-10">
-   <v-card  class="mt-8 mx-auto " max-width="900" height="500px" >
+  <v-container class="pt-10">
+   <v-card  class="mt-8 mx-auto " max-width="1000" height="500px" >
        <v-img
         class="white--text"
         height="200px"
@@ -41,7 +41,7 @@
       <v-btn small to="/suscribe">Suscribe</v-btn>
       </v-form>
     </v-card>
-  </v-containers>
+  </v-container>
 </template>
 
 <script>
@@ -55,7 +55,9 @@ export default {
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
       ],
       password: '',
-      checkbox: false
+      passwordRules: [ ],
+      checkbox: false,
+      checkboxRules: [ ]
     }
   },
   methods: {
@@ -73,3 +75,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.pt-10{
+    margin: -10px 0 0 0;
+    padding: 100px;
+    position:absolute;
+    left: 0;
+    right: 0;
+}
+</style>

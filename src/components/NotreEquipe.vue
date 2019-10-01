@@ -35,9 +35,9 @@ export default {
   data () {
     return {
       team: [
-        { name: 'Le Parisiens zeubi', role: 'Web developer', avatar:'mbappe.jpg' },
-        { name: 'Liverpool c la d', role: 'Graphic designer', avatar:'mosalah.jpg' },
-        { name: 'Come on Chelsea', role: 'Web developer', avatar:'ninja.png' }
+        { name: 'Le Parisiens zeubi', role: 'Web developer', avatar: 'mbappe.jpg' },
+        { name: 'Liverpool c la d', role: 'Graphic designer', avatar: 'mosalah.jpg' },
+        { name: 'Come on Chelsea', role: 'Web developer', avatar: 'ninja.png' }
       ]
     }
   }

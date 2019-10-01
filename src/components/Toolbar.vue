@@ -1,9 +1,10 @@
 <template>
   <nav>
 <!-- Toolbar (set up of the text)-->
-    <v-toolbar app dark
+
+    <v-app-bar app dark
       prominent
-      src="vue-js-hex-colors-gradient-background.png">
+      src="vue-js-hex-colors-gradient-background.png">>
       <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
       <router-link to="/">
         <v-toolbar-title class="white--text ml-8">Society</v-toolbar-title>
@@ -35,9 +36,7 @@
       </v-list>
     </v-menu>
       </template>
-
-    </v-toolbar>
-
+    </v-app-bar>
 <!-- navigation-drawer -->
     <v-navigation-drawer app v-model="drawer" fixed>
      <v-card class="mx-auto" max-width="300" tile>

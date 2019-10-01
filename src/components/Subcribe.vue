@@ -1,5 +1,5 @@
 <template>
-  <v-containers class="pt-10">
+  <v-container class="pt-10">
    <v-card  class="mt-8 mx-auto " width="900" height="1000px" >
       <v-img
         class="white--text"
@@ -126,7 +126,7 @@
       </router-link>
       </v-form>
     </v-card>
-  </v-containers>
+  </v-container>
 </template>
 
 <script>
@@ -137,6 +137,7 @@ export default {
       // date
       date: null,
       menu: false,
+      popup: false,
       watch: {
         menu (val) {
           val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))

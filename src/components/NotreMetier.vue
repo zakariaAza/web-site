@@ -1,10 +1,13 @@
 <template>
-    <h1>NOTRE METIER</h1>
+    <v-container>
+      <h1>Notre metier</h1>
+    </v-container>
 </template>
 
 <script>
 export default {
   data () {
+    return {}
   }
 }
 </script>
