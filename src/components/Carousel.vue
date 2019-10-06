@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-layout row wrap class="image">
-      <v-flex xs12>
-        <v-carousel>
+      <v-flex xs12 >
+        <v-carousel height="300px">
           <v-carousel-item
             v-for="meetup in meetups"
             :src="meetup.imageUrl"
@@ -34,10 +34,9 @@ export default {
 
 <style scoped>
   .title {
-    position:fixed;
-    top:50%;
-    left:50%;
-    margin:-100px 0 0 -100px;
+    position:relative;
+    left:43%;
+    top: 45%;;
     width:max-content;
     height:max-content;
     background-color: rgba(0,0,0,0.5);
@@ -49,9 +48,9 @@ export default {
 
 <style scoped>
 .image{
-    margin: -10px 0 0 0;
     position:absolute;
     left: 0;
     right: 0;
+    top: 0;
 }
 </style>
