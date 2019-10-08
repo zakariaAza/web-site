@@ -1,6 +1,6 @@
 <template>
   <v-container class="pt-10">
-   <v-card  class="mt-8 mx-auto " width="900" height="1000px" >
+   <v-card  class="mt-8 mx-auto " width="1100" height="1000px" >
       <v-img
         class="white--text"
         height="200px"

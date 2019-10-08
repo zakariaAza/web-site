@@ -6,6 +6,8 @@ import SignIn from '@/components/SignIn'
 import Contact from '@/components/Contact'
 import NotreEquipe from '@/components/NotreEquipe'
 import NotreMetier from '@/components/NotreMetier'
+import Requête from '@/components/Requête'
+import ContactUs from '@/components/ContactUs'
 
 Vue.use(Router)
 
@@ -30,6 +32,16 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/contactus',
+      name: 'Contactus',
+      component: ContactUs
+    },
+    {
+      path: '/requête',
+      name: 'Requête',
+      component: Requête
     },
     {
       path: '/metier',
