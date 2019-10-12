@@ -1,8 +1,8 @@
 <template>
-    <v-container>
+    <v-container >
             <v-flex>
                 <v-span class="text-center" v-for="(text, index) in texts" :key="index">
-                    <v-span>{{text}}</v-span>
+                    {{text}}
                     <v-divider v-if="index != texts.length -1" class="mx-4" vertical color="black" style="display: inline;"></v-divider>
                 </v-span>
             </v-flex>
