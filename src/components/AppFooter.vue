@@ -1,6 +1,6 @@
 <template>
 <div >
-  <v-app  elevation id="inspire">
+  <v-app  elevation id="inspire" class= "app">
     <v-footer  color="grey darken-3" padless  class="justify-center pl-0" inset app>
       <v-row justify="center" no-gutters >
         <v-btn v-for="(link,idx) in links" :key="idx" color="white" text class="my-2">
@@ -37,3 +37,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .app{
+    max-height: 0px;
+  }
+</style>

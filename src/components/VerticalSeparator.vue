@@ -13,9 +13,9 @@
 export default {
   data () {
     return {
-      texts: ['Il faut savoir que nous somme l' + 'entreprise la plus puissante au moonde',
-        'Nous vendons des biscuits aromatisés à la noisette',
-        'J' + 'ai dis nonnnnnnnn ']
+      texts: ['Efficacité',
+        'Expertise',
+        'Perfection']
     }
   }
 }
@@ -24,11 +24,16 @@ export default {
 <style scoped>
   .text-center {
     position: relative;
-    color: black;
-    max-width: 10px;
+    color: gold;
     top: 330px;
-    font-size: 20px;
+    left: 13%;
+    font-size: 50px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .mx-4{
+    height: 200px;
+    color: gold;
   }
 </style>

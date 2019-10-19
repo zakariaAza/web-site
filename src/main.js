@@ -4,6 +4,7 @@ import vuetify from './plugins/vuetify'
 import router from './router/router.js'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import 'vue-material-design-icons/styles.css'
 
 Vue.use(VueAxios, axios)
 

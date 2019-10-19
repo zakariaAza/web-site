@@ -26,7 +26,7 @@ export default {
     color: black;
     max-width: 500px;
     top: 330px;
-    font-size: 20px;
+    font-size: 24px;
     margin-left: auto;
     margin-right: auto;
   }
