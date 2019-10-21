@@ -1,12 +1,14 @@
 <template>
   <v-container class="pt-10">
-   <v-card  class="mt-8 mx-auto " max-width="1000" height="500px" >
+    <h1 class="pt-5 ContactTitle">Sign In to DCA Consulting Corporation</h1>
+    <p class="grey--text">Sign in to access to your profile.</p>
+   <v-card  class="mt-8 mx-auto " max-width="1000" height="520px" >
        <v-img
         class="white--text"
         height="200px"
         src="http://2op.com.br/blog/wp-content/uploads/2015/12/redacao-on-principais-caracteristicas-da-producao-de-conteudo-1000x563.jpg"
       >
-      <strong><v-card-title class="align-end black--text justify-center ">SIGN IN</v-card-title></strong>
+      <!-- <strong><v-card-title class="align-end black--text justify-center ">SIGN IN</v-card-title></strong> -->
       </v-img>
         <v-form class="px-3" ref="form" v-model="valid" lazy-validation>
 

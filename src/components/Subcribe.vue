@@ -1,12 +1,14 @@
 <template>
   <v-container class="pt-10">
+    <h1 class="pt-5 ContactTitle">Subscribe to DCA Consulting Corporation</h1>
+    <p class="grey--text">Enter your name and email address, personal information and click “Suscribe”.</p>
    <v-card  class="mt-8 mx-auto " width="1100" height="1000px" >
       <v-img
         class="white--text"
         height="200px"
         src="https://www.docusign.fr/blog/wp-content/uploads/sites/14/2015/10/shutterstock_182769413-Converted-720x542.png"
       >
-      <strong><v-card-title class="align-end black--text justify-center">SUBSCRIBE</v-card-title></strong>
+      <!-- <strong><v-card-title class="align-end black--text justify-center">SUBSCRIBE</v-card-title></strong> -->
       </v-img>
         <v-form class="px-3" ref="form" v-model="valid" lazy-validation>
 

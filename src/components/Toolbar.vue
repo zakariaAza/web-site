@@ -5,7 +5,7 @@
     <v-app-bar app dark
       prominent
       src="https://images.wallpaperscraft.com/image/blue_backgrounds_solid_light_65833_1600x1200.jpg">
-      <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
+      <!-- <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon> -->
       <router-link to="/">
         <v-toolbar-title class="white--text ml-8" to="/">DCA Consulting</v-toolbar-title>
       </router-link>
@@ -38,13 +38,13 @@
       </template>
     </v-app-bar>
 <!-- navigation-drawer -->
-    <v-navigation-drawer app v-model="drawer" fixed>
+    <!-- <v-navigation-drawer app v-model="drawer" fixed>
      <v-card class="mx-auto" max-width="300" tile>
       <v-list >
         <v-subheader>Menu</v-subheader>
       </v-list>
     </v-card>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
 
   </nav>
 </template>

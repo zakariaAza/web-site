@@ -9,7 +9,7 @@
 
         <v-layout row wrap class="pb-8">
            <v-flex xs6 md4 v-for="information in contact" :key="information.id">
-             <v-card outlined  width="400" height="250px">
+             <v-card outlined  width="600" height="250px">
               <v-card-title class="size blue--text text--darken-4"> <strong> Bureau de Paris</strong></v-card-title>
               <div class="ml-3 pt-3">{{information.name}}</div>
               <div class="ml-3">{{information.adresse}}</div>
@@ -19,7 +19,7 @@
              </v-card>
           </v-flex>
           <v-flex xs6 md4>
-             <v-card outlined  width="400" height="250px">
+             <v-card outlined  width="600" height="250px">
               <v-card-title class="size blue--text text--darken-4"> <strong>Demande de mission de conseil</strong> </v-card-title>
               <v-card-text>
                 <v-btn text class="padding size2" color="blue darken-4"><v-icon>mdi-menu-right </v-icon>Soumettre votre requête</v-btn>
@@ -27,7 +27,7 @@
              </v-card>
           </v-flex>
           <v-flex xs6 md4>
-             <v-card outlined  width="400" height="250px">
+             <v-card outlined  width="600" height="250px">
               <v-card-title class="size blue--text text--darken-4"> <strong> Réseaux sociaux</strong></v-card-title>
               <v-card-text>
                 <v-btn text class="padding size2" color="blue darken-4"><v-icon>mdi-menu-right </v-icon>Suivez-nous sur Facebook, Twitter et Instagram</v-btn>
@@ -35,7 +35,7 @@
              </v-card>
           </v-flex>
           <v-flex xs6 md4>
-             <v-card outlined  width="400" height="250px">
+             <v-card outlined  width="600" height="250px">
               <v-card-title class="size blue--text text--darken-4"> <strong>Relations Presse</strong>  </v-card-title>
               <v-card-text class="mt-5 "><a href="mailto:conteh@et.esiea.fr">conteh@et.esiea.fr</a></v-card-text>
               <v-card-text class="mt-n10"><a href="mailto:soumaila@et.esiea.fr">soumaila@et.esiea.fr</a></v-card-text>
@@ -44,7 +44,7 @@
              </v-card>
           </v-flex>
           <v-flex xs6 md4>
-             <v-card outlined  width="400" height="250px">
+             <v-card outlined  width="600" height="250px">
               <v-card-title class="size blue--text text--darken-4"> <strong>Recrutement</strong> </v-card-title>
               <v-card-text class="mt-5 "><a href="mailto:soumaila@et.esiea.fr">soumaila@et.esiea.fr</a></v-card-text>
               <v-card-text class="mt-n10"><a href="mailto:azakkour@et.esiea.fr">azakkour@et.esiea.fr</a></v-card-text>
@@ -52,7 +52,7 @@
              </v-card>
           </v-flex>
           <v-flex xs6 md4>
-             <v-card outlined  width="400" height="250px">
+             <v-card outlined  width="600" height="250px">
               <v-card-title class="size blue--text text--darken-4"> <strong>Question ou commentaires</strong>  </v-card-title>
               <v-card-text>
                 <v-btn text class="padding size2" color="blue darken-4"><v-icon>mdi-menu-right </v-icon><a href="mailto:Paris.Recruiting@DCACorporation.fr">Contacter-Nous</a></v-btn>

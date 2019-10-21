@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row wrap class="image">
       <v-flex xs12 >
-        <v-carousel height="300px">
+        <v-carousel cycle height="300px">
           <v-carousel-item
             v-for="meetup in meetups"
             :src="meetup.imageUrl"
@@ -25,7 +25,7 @@ export default {
       meetups: [
         { imageUrl: 'https://images.pexels.com/photos/1509428/pexels-photo-1509428.jpeg?cs=srgb&dl=camera-coffee-composition-1509428.jpg&fm=jpg', id: 'image1', title: 'Title1 example', width: screen.width },
         { imageUrl: 'https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?cs=srgb&dl=bump-collaboration-colleagues-1068523.jpg&fm=jpg', id: 'image2', title: 'Title2 example', width: screen.width },
-        { imageUrl: 'https://cdn.pixabay.com/photo/2015/05/25/05/27/network-782707_960_720.png', id: 'image3', title: 'Title3 example', width: screen.width }
+        { imageUrl: 'https://cdn.pixabay.com/photo/2017/04/14/17/22/lean-startup-2230822_1280.jpg', id: 'image3', title: 'Title3 example', width: screen.width }
       ]
     }
   }
