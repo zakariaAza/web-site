@@ -66,7 +66,20 @@ export default {
     validate () {
       if (this.$refs.form.validate()) {
         this.snackbar = true
-        console.log(this.name, this.password) // to send the data to the back end
+        console.log(this.email, this.password) // to send the data to the back end
+        this.axios({
+          method: 'post',
+          url: 'http://localhost:4000' + '/api/login',
+          data: {
+            email: this.email,
+            password: this.password
+          }
+        })
+          .then((response) => {
+            console.log(response)
+          }, (error) => {
+            console.log(error)
+          })
       }
     },
     reset () {
