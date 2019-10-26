@@ -8,6 +8,8 @@ import NotreEquipe from '@/components/NotreEquipe'
 import NotreMetier from '@/components/NotreMetier'
 import Requête from '@/components/Requête'
 import ContactUs from '@/components/ContactUs'
+import TestServer from '@/components/TestServer'
+import Profil from '@/components/Profil'
 
 Vue.use(Router)
 
@@ -52,6 +54,16 @@ export default new Router({
       path: '/equipe',
       name: 'equipe',
       component: NotreEquipe
+    },
+    {
+      path: '/testserver',
+      name: 'testserver',
+      component: TestServer
+    },
+    {
+      path: '/profil',
+      name: 'profil',
+      component: Profil
     }
   ]
 })

@@ -1,5 +1,5 @@
 <template>
-  <v-app class ="app" min-height= "0">
+  <v-app app class ="app" min-height= "0">
     <v-content min-height= "0">
       <Toolbar/>
       <router-view></router-view>
@@ -25,7 +25,6 @@ export default {
     font-size: 20px;
     min-height: 0vh;
   }
-
 </style>
 
 <style scoped>

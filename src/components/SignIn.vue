@@ -36,7 +36,7 @@
         required>
       </v-checkbox>
 
-      <v-btn small  :disabled="!valid" color="success" class="mr-4" @click="validate"> LOGIN </v-btn>
+      <v-btn small  :disabled="!valid" color="success" class="mr-4" @click="login"> LOGIN </v-btn>
       <v-btn small color="error" class="mr-4" @click="reset"> Clear</v-btn>
       <br><br>
 
@@ -50,6 +50,7 @@
 export default {
   data () {
     return {
+      url: 'http://localhost:4000',
       valid: true,
       email: '',
       emailRules: [
@@ -67,25 +68,32 @@ export default {
       if (this.$refs.form.validate()) {
         this.snackbar = true
         console.log(this.email, this.password) // to send the data to the back end
-        this.axios({
-          method: 'post',
-          url: 'http://localhost:4000' + '/api/login',
-          data: {
-            email: this.email,
-            password: this.password
-          }
-        })
-          .then((response) => {
-            console.log(response)
-          }, (error) => {
-            console.log(error)
-          })
       }
     },
     reset () {
       this.$refs.form.reset()
     },
     rememberMe () {
+    },
+    // Login back end
+    async login () {
+      // connecter l'utilisateur
+      this.axios({
+        method: 'post',
+        url: this.url + '/api/login',
+        data: {
+          email: this.email,
+          password: this.password
+        }
+      })
+        .then(function (reponse) {
+        // On traite la suite une fois la réponse obtenue
+          console.log(reponse)
+        })
+        .catch(function (erreur) {
+          // On traite ici les erreurs éventuellement survenues
+          console.log(erreur)
+        })
     }
   }
 }

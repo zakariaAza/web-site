@@ -40,7 +40,7 @@ export default {
     name: '',
     description: '',
     todos: [],
-    url: '' // 'http://localhost:4000'
+    url: 'http://localhost:4000'
   }),
   methods: {
     async login () {
