@@ -1,24 +1,41 @@
 <template>
 <v-container class="my-5">
 
-      <v-layout row wrap>
+      <v-layout row wrap class="pb-8">
         <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
           <v-card flat class="text-xs-center ma-3">
             <v-responsive class="pt-4">
-              <v-avatar size="250">
+              <v-avatar size="200">
                 <img :src="person.avatar">
               </v-avatar>
             </v-responsive>
             <v-card-text>
               <div class="subheading">{{ person.name }}</div>
-              <div class="grey--text">{{ person.role }}</div>
             </v-card-text>
-            <v-card-actions>
-              <v-btn text color="grey">
-                <v-icon small left>mdi-message</v-icon>
-                <span class="">Message</span>
-              </v-btn>
-            </v-card-actions>
+          </v-card>
+        </v-flex>
+        <v-flex xs6 md4>
+          <v-card outlined  width="350" height="250px">
+            <v-card-title class="size blue--text text--darken-4"> <strong> Co-CEO and Web Designer </strong></v-card-title>
+            <v-card-text>
+                Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva aegre vestigia claritudinis pristinae monstrat admodum pauca.
+            </v-card-text>
+            </v-card>
+        </v-flex>
+        <v-flex>
+          <v-card outlined  width="360" height="250px">
+            <v-card-title class="size blue--text text--darken-4"> <strong> Co-CEO and Graphic Designer </strong></v-card-title>
+            <v-card-text>
+                Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva aegre vestigia claritudinis pristinae monstrat admodum pauca.
+            </v-card-text>
+            </v-card>
+        </v-flex>
+        <v-flex>
+          <v-card outlined  width="350" height="250px">
+            <v-card-title class="size blue--text text--darken-4"> <strong> Co-CEO and IT Engineer </strong></v-card-title>
+            <v-card-text>
+                Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva aegre vestigia claritudinis pristinae monstrat admodum pauca.
+            </v-card-text>
           </v-card>
         </v-flex>
       </v-layout>
@@ -32,9 +49,9 @@ export default {
   data () {
     return {
       team: [
-        { name: 'Le Parisiens zeubi', role: 'Web developer', avatar: 'mbappe.jpg' },
-        { name: 'Liverpool c la d', role: 'Graphic designer', avatar: 'mosalah.jpg' },
-        { name: 'Come on Chelsea', role: 'Web developer', avatar: 'ninja.png' }
+        { name: 'Zakaria Azakkour', role: 'Web developer', avatar: 'zak.jpg' },
+        { name: 'Desmond Conteh', role: 'Graphic designer', avatar: 'desmond.jpg' },
+        { name: 'Cédric SOUMAILA', role: 'Web developer', avatar: 'ced.jpg' }
       ]
     }
   }
