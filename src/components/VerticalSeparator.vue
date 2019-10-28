@@ -25,8 +25,7 @@ export default {
   .text-center {
     position: relative;
     color: gold;
-    top: 330px;
-    left: 13%;
+    top: 640px;
     font-size: 50px;
     margin-left: auto;
     margin-right: auto;
