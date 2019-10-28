@@ -26,7 +26,12 @@ app.use(express.static(path.join(__dirname, 'dist/')))
 const users = [{
   // admin by default
   username: 'admin@esiea.fr',
-  password: 'dca-corporation'
+  password: 'dca-corporation',
+  Firstname: 'admin',
+  Lastname: 'admin',
+  date: '27/10/2019',
+  jobtitle: 'admin',
+  country: 'france'
 }]
 
 app.post('/api/login', (req, res) => {
@@ -48,8 +53,10 @@ app.post('/api/login', (req, res) => {
       console.log(users)
       console.log(req.session.id)
       res.json({
-        message: 'connected'
+        message: 'connected',
+        status: 200
       })
+      res.status(200)
     }
   } else {
     console.log('you are already connected')
@@ -64,7 +71,15 @@ app.post('/api/login', (req, res) => {
 app.post('/api/subscribe', (req, res) => {
   const user = users.find(u => u.username === req.body.email)
   if (!user) {
-    users.push({ username: req.body.email, password: req.body.password })
+    users.push({
+      username: req.body.email,
+      password: req.body.password,
+      Firstname: req.body.Firstname,
+      Lastname: req.body.LastName,
+      date: req.body.date,
+      jobtitle: req.body.jobtitle,
+      country: req.body.country
+    })
     console.log(users)
     res.json({
       message: 'Success'

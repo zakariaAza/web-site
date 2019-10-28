@@ -233,7 +233,12 @@ export default {
         url: 'http://localhost:4000' + '/api/subscribe',
         data: {
           email: this.email,
-          password: this.password
+          password: this.password,
+          Fistname: this.Firstname,
+          Lastname: this.Lastname,
+          date: this.date,
+          jobtitle: this.jobtitle,
+          country: this.states
         }
       })
         .then((response) => {

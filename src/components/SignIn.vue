@@ -77,6 +77,7 @@ export default {
     },
     // Login back end
     async login () {
+      var that = this
       // connecter l'utilisateur
       this.axios({
         method: 'post',
@@ -86,9 +87,15 @@ export default {
           password: this.password
         }
       })
-        .then(function (reponse) {
+        .then(function (response) {
         // On traite la suite une fois la réponse obtenue
-          console.log(reponse)
+          console.log(response)
+          const status = JSON.parse(response.data.status)
+          // redirect logic
+          // eslint-disable-next-line eqeqeq
+          if (status == '200') {
+            that.$router.push('profil')
+          }
         })
         .catch(function (erreur) {
           // On traite ici les erreurs éventuellement survenues

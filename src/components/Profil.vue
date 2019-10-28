@@ -17,40 +17,6 @@
           </v-card-text>
         </card>
       </v-flex>
-
-      <v-form>
-
-    <v-text-field
-      v-model="company"
-      :rules="CompanyRules"
-      label="Company"
-      required
-    ></v-text-field>
-
-    <v-text-field
-      v-model="name"
-      :counter="20"
-      :rules="FirstnameRules"
-      label="Firstname"
-      required
-    ></v-text-field>
-
-    <v-text-field
-      v-model="surname"
-      :counter="20"
-      :rules="LastnameRules"
-      label="Lastname"
-      required
-    ></v-text-field>
-
-     <v-textarea class="pt-5 purple-input" label="Explain your project"/>
-
-    <v-btn color="success">
-      Add your project
-    </v-btn>
-
-      </v-form>
-
     </v-layout>
 
 </template>
