@@ -234,11 +234,11 @@ export default {
         data: {
           email: this.email,
           password: this.password,
-          Fistname: this.Firstname,
+          Firstname: this.Firstname,
           Lastname: this.Lastname,
           date: this.date,
           jobtitle: this.jobtitle,
-          country: this.states
+          country: 'France'
         }
       })
         .then((response) => {

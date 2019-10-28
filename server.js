@@ -75,7 +75,7 @@ app.post('/api/subscribe', (req, res) => {
       username: req.body.email,
       password: req.body.password,
       Firstname: req.body.Firstname,
-      Lastname: req.body.LastName,
+      Lastname: req.body.Lastname,
       date: req.body.date,
       jobtitle: req.body.jobtitle,
       country: req.body.country
