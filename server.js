@@ -37,10 +37,10 @@ app.post('/api/login', (req, res) => {
     if (!user) {
       console.log(users)
       console.log('fail connexion')
-      res.status(401)
       res.json({
         message: 'did not find any user with these credentials'
       })
+      res.status(401)
     } else {
       // connect to the user
       req.session.id = user.id // connect to the user and change the id

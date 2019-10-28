@@ -2,7 +2,7 @@
   <v-container class="pt-10">
     <h1 class="pt-5 ContactTitle">Subscribe to DCA Consulting Corporation</h1>
     <p class="grey--text">Enter your name and email address, personal information and click “Suscribe”.</p>
-   <v-card  class="mt-8 mx-auto " width="1100" height="1000px" >
+   <v-card  class="mt-8 mx-auto " width="1100" height="1150px" >
       <v-img
         class="white--text"
         height="200px"
@@ -66,7 +66,34 @@
         </v-date-picker>
       </v-menu>
 
-      <v-card-text class="text-center" > Vous êtes :</v-card-text>
+       <v-text-field
+        class="black--text"
+        prepend-icon="mdi-account-card-details"
+        v-model="jobtitle"
+        :rules="JobTitleeRules"
+        label="Job title"
+        required>
+      </v-text-field>
+
+      <v-row align="center">
+        <v-col cols="6">
+          <v-subheader>Select Country</v-subheader>
+        </v-col>
+        <v-col cols="6">
+          <v-select
+            v-model="e1"
+            :items="states"
+            :rules="CountryRules"
+            menu-props="auto"
+            label="Select"
+            hide-details
+            prepend-icon="mdi-map"
+            single-line
+          ></v-select>
+        </v-col>
+      </v-row>
+
+      <v-card-text class=" pt-10 text-center" > Vous êtes :</v-card-text>
 
       <v-radio-group column class="pl-12">
         <v-radio label="Une femme"></v-radio>
@@ -133,6 +160,7 @@ export default {
   data () {
     return {
       // date
+      e1: 'France',
       date: null,
       menu: false,
       popup: false,
@@ -141,6 +169,24 @@ export default {
           val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))
         }
       },
+      // country
+      states: [
+        'France', 'Belgium', 'American Samoa', 'Arizona',
+        'Arkansas', 'California', 'Colorado', 'Connecticut',
+        'Delaware', 'District of Columbia', 'Federated States of Micronesia',
+        'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho',
+        'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
+        'Louisiana', 'Maine', 'Marshall Islands', 'Maryland',
+        'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+        'Missouri', 'Montana', 'Nebraska', 'Nevada',
+        'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+        'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio',
+        'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico',
+        'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+        'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
+        'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+      ],
+      CountryRules: [ v => !!v || 'Country is required' ],
       // firstname
       valid: true,
       Firstname: '',
@@ -153,6 +199,11 @@ export default {
       LastnameRules: [
         v => !!v || 'LastName is required',
         v => (v && v.length <= 20) || 'Name must be less than 10 characters'
+      ],
+      // Job title
+      jobtitle: '',
+      JobTitleeRules: [
+        v => !!v || 'Job Title is required'
       ],
       //  email
       email: '',
