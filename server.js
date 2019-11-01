@@ -4,13 +4,14 @@
  * puis node server.js
  * exemple complet à l'adresse
  */
+
 const express = require('express')
+const session = require('express-session')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const cors = require('cors')
-const session = require('express-session')
-const app = express()
 
+const app = express()
 app.use(session({
   secret: 'dca', // changez cette valeur
   resave: false,
@@ -68,6 +69,20 @@ app.post('/api/login', (req, res) => {
   }
 })
 
+// app.get('/api/logout', (req, res) => {
+//   if (!req.session.userId) {
+//     res.status(401)
+//     res.json({
+//       message: 'you are already disconnected'
+//     })
+//   } else {
+//     req.session.userId = 0
+//     res.json({
+//       message: 'you are now disconnected'
+//     })
+//   }
+// })
+
 app.post('/api/subscribe', (req, res) => {
   const user = users.find(u => u.username === req.body.email)
   if (!user) {
@@ -91,6 +106,10 @@ app.post('/api/subscribe', (req, res) => {
   }
 })
 
+app.get('api/profileInformation', (req, res) => {
+
+})
+
 // app.get('/api/test', (req, res) => {
 //   console.log('ce console.log est appelé au bon moment')
 //   res.json([
@@ -102,20 +121,6 @@ app.post('/api/subscribe', (req, res) => {
 //       content: 'machin2'
 //     }
 //   ])
-// })
-
-// app.get('/api/logout', (req, res) => {
-//   if (!req.session.userId) {
-//     res.status(401)
-//     res.json({
-//       message: 'you are already disconnected'
-//     })
-//   } else {
-//     req.session.userId = 0
-//     res.json({
-//       message: 'you are now disconnected'
-//     })
-//   }
 // })
 
 // app.get('/api/admin', (req, res) => {

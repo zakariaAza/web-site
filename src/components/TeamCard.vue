@@ -1,8 +1,7 @@
 <template>
-<v-container class="my-5">
-
-      <v-layout row wrap class="pb-8">
-        <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
+    <v-layout row wrap class="pb-8 pl-12">
+        <v-row justify="space-around">
+          <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
           <v-card flat class="text-xs-center ma-3">
             <v-responsive class="pt-4">
               <v-avatar size="200">
@@ -38,9 +37,8 @@
             </v-card-text>
           </v-card>
         </v-flex>
+      </v-row>
       </v-layout>
-
-    </v-container>
 </template>
 
 <script>

@@ -7,7 +7,7 @@
           </v-avatar>
           <v-card-text class=" text-xs-center">
             <h2 class="pt-10 ml-5 black--text">WELCOME on your profile page !</h2>
-            <h1 class="pt-5 ml-5 card-title font-weight-light">Name profile</h1><br>
+            <h1 class="pt-5 ml-5 card-title font-weight-light">name profile</h1><br>
             <p class="ml-5 card-description font-weight-light text">
               <v-icon>
                 mdi-map
@@ -16,6 +16,8 @@
               </p>
           </v-card-text>
         </card>
+
+        <v-btn class="ml-10" color="error">logout</v-btn>
       </v-flex>
     </v-layout>
 
@@ -23,7 +25,7 @@
 
 <script>
 export default {
-  //
+
 }
 </script>
 
