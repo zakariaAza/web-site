@@ -2,7 +2,7 @@
   <v-container class="pt-10">
     <h1 class="pt-5 ContactTitle">Sign In to DCA Consulting Corporation</h1>
     <p class="grey--text">Sign in to access to your profile.</p>
-   <v-card  class="mt-8 mx-auto " max-width="1000" height="520px">
+   <v-card  class="mt-8 mx-auto " max-width="1000" height="520px" >
        <v-img
         class="white--text"
         height="200px"
@@ -47,10 +47,10 @@
 </template>
 
 <script>
+
 export default {
   data () {
     return {
-      seen: true,
       url: 'http://localhost:4000',
       valid: true,
       email: '',
@@ -91,12 +91,12 @@ export default {
         .then(function (response) {
         // On traite la suite une fois la réponse obtenue
           console.log(response)
-          const status = response.data.status
+          const status = JSON.parse(response.data.status)
           // redirect logic
           // eslint-disable-next-line eqeqeq
           if (status == '200') {
+            localStorage.setItem('email', that.email)
             that.$router.push('profil')
-            sessionStorage.setItem('email', that.email)
           }
         })
         .catch(function (erreur) {

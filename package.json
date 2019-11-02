@@ -18,10 +18,12 @@
     "express-session": "^1.17.0",
     "morgan": "^1.9.1",
     "node-modules": "^1.0.1",
+    "passport-local": "^1.0.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
     "vue-material-design-icons": "^4.1.0",
     "vue-router": "^3.1.3",
+    "vue-session": "^1.0.0",
     "vuetify": "^2.0.0"
   },
   "devDependencies": {

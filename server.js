@@ -32,7 +32,8 @@ const users = [{
   Lastname: 'admin',
   date: '27/10/2019',
   jobtitle: 'admin',
-  country: 'france'
+  country: 'france',
+  projectText: ''
 }]
 
 app.post('/api/login', (req, res) => {
@@ -106,8 +107,34 @@ app.post('/api/subscribe', (req, res) => {
   }
 })
 
-app.get('api/profileInformation', (req, res) => {
-
+app.post('/api/profileInformations', (req, res) => {
+  const user = users.find(u => u.username === req.body.email)
+  console.log('getProfileLaunched')
+  console.log(req.body)
+  if (!user) {
+    console.log(users)
+    console.log('failed to retrieve profile informations')
+    res.json({
+      message: 'did not find any user with this mail'
+    })
+    res.status(401)
+  } else {
+    console.log('User informations retrieved')
+    console.log(users)
+    console.log(req.session.id)
+    res.json({
+      message: 'User informations retrieved',
+      status: 200,
+      username: user.username,
+      Firstname: user.Firstname,
+      Lastname: user.Lastname,
+      date: user.date,
+      jobtitle: user.jobtitle,
+      country: user.country,
+      projectText: user.projectText
+    })
+    res.status(200)
+  }
 })
 
 // app.get('/api/test', (req, res) => {
