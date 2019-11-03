@@ -160,6 +160,7 @@ export default {
   data () {
     return {
       // date
+      suscribe: false,
       e1: 'France',
       date: null,
       menu: false,
@@ -243,6 +244,7 @@ export default {
       })
         .then((response) => {
           console.log(response)
+          alert('Thank you for suscribing !')
         }, (error) => {
           console.log(error)
         })

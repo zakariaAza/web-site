@@ -13,24 +13,24 @@
             </v-card-text>
           </v-card>
         </v-flex>
-        <v-flex xs6 md4>
-          <v-card outlined  width="350" height="250px">
+        <v-flex xs8 md4>
+          <v-card outlined  width="355" height="255px">
             <v-card-title class="size blue--text text--darken-4"> <strong> Co-CEO and Web Designer </strong></v-card-title>
             <v-card-text>
                 Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva aegre vestigia claritudinis pristinae monstrat admodum pauca.
             </v-card-text>
             </v-card>
         </v-flex>
-        <v-flex>
-          <v-card outlined  width="360" height="250px">
+        <v-flex xs8 md4>
+          <v-card outlined  width="355" height="255px">
             <v-card-title class="size blue--text text--darken-4"> <strong> Co-CEO and Graphic Designer </strong></v-card-title>
             <v-card-text>
                 Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva aegre vestigia claritudinis pristinae monstrat admodum pauca.
             </v-card-text>
             </v-card>
         </v-flex>
-        <v-flex>
-          <v-card outlined  width="350" height="250px">
+        <v-flex xs8 md4>
+          <v-card outlined  width="355" height="255px">
             <v-card-title class="size blue--text text--darken-4"> <strong> Co-CEO and IT Engineer </strong></v-card-title>
             <v-card-text>
                 Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva aegre vestigia claritudinis pristinae monstrat admodum pauca.

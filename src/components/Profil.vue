@@ -16,7 +16,7 @@
           title="Edit Profile"
           text="Complete your profile"
         >
-          <v-form>
+          <v-form ref="form">
             <v-container py-0>
               <v-layout wrap>
                 <v-flex
@@ -119,13 +119,23 @@
                   >
                     Update Profile
                   </v-btn>
-                  <p v-if="updateprofile" class="pt-5"><h6>Thanks for updating your post ! </h6></div>
-                  <!-- <v-btn
+                  <div v-if="updateprofile" class="pt-5">
+                    <v-row justify="space-around">
+                      <h4 class="green--text">Thanks for updating your post ! </h4>
+                    </v-row>
+                  </div>
+                  <v-btn
                     class="ml-5 font-weight-light"
-                    color="success"
+                    color="error"
+                    @click="deleteProject"
                   >
-                    Submit project
-                  </v-btn> -->
+                    Delete Project
+                  </v-btn>
+                  <div v-if="deleteprofile" class="pt-5" >
+                    <v-row justify="space-around">
+                      <h4 class="red--text">Your project is delete from our database !</h4>
+                    </v-row>
+                  </div>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -147,8 +157,9 @@
             >
           </v-avatar>
           <v-card-text class="text-xs-center">
-            <h6 class="category text-gray font-weight-thin mb-3">{{ jobtitle}}</h6>
-            <h4 class="card-title font-weight-light">{{ Firstname }}  {{ Lastname }} </h4>
+            <v-row justify="space-around" class="pt-5"><h1>WELCOME {{ Firstname }} ! </h1></v-row>
+            <h6 class="category text-gray font-weight-thin mb-3 pt-3">{{ jobtitle}}</h6>
+            <h2 class="card-title font-weight-light">{{ Firstname }}  {{ Lastname }} </h2>
           </v-card-text>
         </material-card>
       </v-flex>
@@ -169,7 +180,8 @@ export default {
       projectText: '',
       city: '',
       postalCode: '',
-      updateprofile: false
+      updateprofile: false,
+      deleteprofile: false
     }
   },
   validate () {
@@ -239,19 +251,48 @@ export default {
           console.log(response)
           that.updateprofile = true
           localStorage.setItem('city', that.city)
+          localStorage.setItem('code', that.postalCode)
+          localStorage.setItem('project', that.projectText)
+        })
+    },
+    async deleteProject () {
+      // connecter l'utilisateur
+      var that = this
+      this.axios({
+        method: 'post',
+        url: 'http://localhost:4000' + '/api/deleteProject',
+        data: {
+          projectText: this.projectText
+        }
+      })
+        .then(function (response) {
+          console.log(response)
+          that.deleteprofile = true
         })
     }
+  },
+  mounted () {
+    if (localStorage.city) {
+      this.city = localStorage.city
+    }
+    if (localStorage.postalCode) {
+      this.postalCode = localStorage.postalCode
+    }
+    if (localStorage.projectText) {
+      this.projectText = localStorage.projectText
+    }
+  },
+  watch: {
+    city (newCity) {
+      localStorage.city = newCity
+    },
+    postalCode (newcode) {
+      localStorage.postalCode = newcode
+    },
+    projectText (newProject) {
+      localStorage.project = newProject
+    }
   }
-  // mounted () {
-  //   if (localStorage.city) {
-  //     this.city = localStorage.city
-  //   }
-  // },
-  // watch: {
-  //   projectText (newCity) {
-  //     localStorage.city = newCity
-  //   }
-  // }
 }
 </script>
 

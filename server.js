@@ -38,6 +38,7 @@ const users = [{
   postalCode: ''
 }]
 
+// LOGIN //
 app.post('/api/login', (req, res) => {
   console.log('req.body', req.body)
   console.log('req.query', req.query)
@@ -86,6 +87,7 @@ app.post('/api/login', (req, res) => {
 //   }
 // })
 
+// SUSCRIBE //
 app.post('/api/subscribe', (req, res) => {
   const user = users.find(u => u.username === req.body.email)
   if (!user) {
@@ -109,6 +111,7 @@ app.post('/api/subscribe', (req, res) => {
   }
 })
 
+// PROFILE INFORMATION //
 app.post('/api/profileInformations', (req, res) => {
   const user = users.find(u => u.username === req.body.email)
   console.log('getProfileLaunched')
@@ -139,6 +142,7 @@ app.post('/api/profileInformations', (req, res) => {
   }
 })
 
+// UPDATE //
 app.post('/api/updateprofile', (req, res) => {
   users.push({
     projectText: req.body.projectText,
@@ -147,34 +151,20 @@ app.post('/api/updateprofile', (req, res) => {
   })
   console.log(users)
   res.json({
-    message: 'profil update !'
+    message: 'profil update !',
   })
 })
 
-// app.get('/api/test', (req, res) => {
-//   console.log('ce console.log est appelé au bon moment')
-//   res.json([
-//     {
-//       title: 'truc',
-//       content: 'machin'
-//     }, {
-//       title: 'truc2',
-//       content: 'machin2'
-//     }
-//   ])
-// })
-
-// app.get('/api/admin', (req, res) => {
-//   if (!req.session.userId || req.session.isAdmin === false) {
-//     res.status(401)
-//     res.json({ message: 'Unauthorized' })
-//     return
-//   }
-
-//   res.json({
-//     message: 'congrats, you are connected'
-//   })
-// })
+// DELETE //
+app.post('/api/deleteProject', (req, res) => {
+  users.push({
+    projectText: ''
+  })
+  console.log(users)
+  res.json({
+    message: 'Project delete on the serve side!'
+  })
+})
 
 const port = process.env.PORT || 4000
 app.listen(port, () => {
