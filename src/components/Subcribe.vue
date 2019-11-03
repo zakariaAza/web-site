@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pt-10">
+  <v-container >
     <h1 class="pt-5 ContactTitle">Subscribe to DCA Consulting Corporation</h1>
     <p class="grey--text">Enter your name and email address, personal information and click “Suscribe”.</p>
    <v-card  class="mt-8 mx-auto " width="1100" height="1150px" >

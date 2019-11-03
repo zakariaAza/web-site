@@ -33,7 +33,9 @@ const users = [{
   date: '27/10/2019',
   jobtitle: 'admin',
   country: 'france',
-  projectText: ''
+  projectText: '',
+  city: '',
+  postalCode: ''
 }]
 
 app.post('/api/login', (req, res) => {
@@ -135,6 +137,18 @@ app.post('/api/profileInformations', (req, res) => {
     })
     res.status(200)
   }
+})
+
+app.post('/api/updateprofile', (req, res) => {
+  users.push({
+    projectText: req.body.projectText,
+    city: req.body.city,
+    postalCode: req.body.postalCode
+  })
+  console.log(users)
+  res.json({
+    message: 'profil update !'
+  })
 })
 
 // app.get('/api/test', (req, res) => {

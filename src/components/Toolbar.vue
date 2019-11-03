@@ -19,19 +19,19 @@
       <template v-if="$vuetify.breakpoint.smAndUp">
         <v-spacer></v-spacer>
          <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
+          <v-icon light color="#01579B" >mdi-magnify</v-icon>
         </v-btn>
 <!-- Menu (suscribe/ sign in)-->
     <v-menu open-on-hover bottom offset-y>
       <template v-slot:activator="{ on }">
         <v-btn icon v-on="on">
-          <v-icon>mdi-account</v-icon>
+          <v-icon v-if="seen" light color="#01579B">mdi-account</v-icon>
         </v-btn>
       </template>
       <v-list>
         <v-list-item >
-            <v-btn text to="/subcribe">Subscribe</v-btn>
-            <v-btn text to="/signin">Sign in</v-btn>
+            <v-btn color="#01579B" text to="/subcribe" >Subscribe</v-btn>
+            <v-btn color="#01579B" text to="/signin">Sign in</v-btn>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -53,12 +53,35 @@
 export default {
   data () {
     return {
-      drawer: false,
+      seen: true,
       LoginMenu: [
         { text: 'Suscribe' },
         { text: 'Sign in' }
       ]
     }
+  },
+  methods: {
+    // async profile () {
+    //   this.axios({
+    //     method: 'post',
+    //     url: this.url + '/api/login'
+    //   })
+    //     .then(function (response) {
+    //       console.log(response)
+    //       const status = response.data.status
+    //       if (status === '200') {
+    //         this.seen = false
+    //       }
+    //     })
+    //     .catch(function (erreur) {
+    //       console.log(erreur)
+    //     })
+    // },
+    // profileIcon () {
+    //   if (sessionStorage.email) {
+    //     this.seen = false
+    //   }
+    // }
   }
 }
 </script>

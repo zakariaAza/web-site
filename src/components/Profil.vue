@@ -39,7 +39,7 @@
                     <v-text-field
                       v-model = "username"
                       required
-                      disabled=  true
+                      disabled= true
                       label = "Mail"
                       outlined = true
                       rounded= true
@@ -65,7 +65,7 @@
                     <v-text-field
                       v-model = "Lastname"
                       required
-                      disabled=  true
+                      disabled= true
                       label = "Last Name"
                       outlined = true
                       rounded= true
@@ -87,6 +87,7 @@
                   xs12
                   md4>
                   <v-text-field
+                    v-model="city"
                     label="City"
                     class="purple-input"/>
                 </v-flex>
@@ -94,12 +95,14 @@
                   xs12
                   md4>
                   <v-text-field
+                    v-model="postalCode"
                     class="purple-input"
                     label="Postal Code"
                     type="number"/>
                 </v-flex>
                 <v-flex xs12>
                   <v-textarea
+                    v-model="projectText"
                     class="purple-input"
                     label="Notre projet"
                     value="Soumettez-nous votre projet ici."
@@ -112,9 +115,17 @@
                   <v-btn
                     class="mx-0 font-weight-light"
                     color="success"
+                    @click="updateProfileInformations"
                   >
                     Update Profile
                   </v-btn>
+                  <p v-if="updateprofile" class="pt-5"><h6>Thanks for updating your post ! </h6></div>
+                  <!-- <v-btn
+                    class="ml-5 font-weight-light"
+                    color="success"
+                  >
+                    Submit project
+                  </v-btn> -->
                 </v-flex>
               </v-layout>
             </v-container>
@@ -144,153 +155,6 @@
     </v-layout>
   </v-container>
 </template>
-<!--<template>
-    <v-container fluid>
-        <v-layout column>
-            <v-card>
-                <v-card-text>
-                    <v-flex >
-                        <v-avatar size="200">
-                            <img src="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg">
-                        </v-avatar>
-                    </v-flex>
-
-                    <v-text-field
-                      required
-                      v-model = "Firstname"
-                      disabled=  true
-                      label = "First Name"
-                      outlined = true
-                      rounded= true
-                    ></v-text-field>
-
-                    <v-text-field
-                      v-model = "Lastname"
-                      required
-                      disabled=  true
-                      label = "Last Name"
-                      outlined = true
-                      rounded= true
-                    ></v-text-field>
-
-                    <v-text-field
-                      v-model = "jobtitle"
-                      required
-                      disabled=  true
-                      label = "Job Title"
-                      outlined = true
-                      rounded= true
-                    ></v-text-field>
-
-                    <v-text-field
-                      v-model = "username"
-                      required
-                      disabled=  true
-                      label = "Mail"
-                      outlined = true
-                      rounded= true
-                    ></v-text-field>
-
-                    <v-text-field
-                      v-model = "country"
-                      required
-                      disabled=  true
-                      label = "Country"
-                      outlined = true
-                      rounded= true
-                    ></v-text-field>
-
-                    <v-textarea class="pt-5 purple-input" label="Explain your project"/>
-
-                    <v-btn color="success">
-                      Add your project
-                    </v-btn>
-                </v-card-text>
-            </v-card>
-        </v-layout>
-    </v-container>
-</template>
--->
-<!--<template>
-<v-layout wrap class="pt-10" >
-      <v-flex>
-        <card class="v-card-profile">
-          <v-avatar slot="offset" class="ml-10 d-block" size="200">
-            <img src="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg">
-          </v-avatar>
-          <v-card-text class=" text-xs-center">
-            <h2 class="pt-10 ml-5 black--text">WELCOME on your profile page !</h2>
-            <h1 class="pt-5 ml-5 card-title font-weight-light">name profile</h1><br>
-            <p class="ml-5 card-description font-weight-light text">
-              <v-icon>
-                mdi-map
-              </v-icon>
-                Country
-              </p>
-          </v-card-text>
-        </card>
-
-        <v-btn class="ml-10" color="error">logout</v-btn>
-
-        <v-form align="left" justify="left">
-
-        <v-text-field
-          required
-          v-model = "Firstname"
-          disabled=  true
-          label = "First Name"
-          outlined = true
-          rounded= true
-        ></v-text-field>
-
-        <v-text-field
-          v-model = "Lastname"
-          required
-          disabled=  true
-          label = "Last Name"
-          outlined = true
-          rounded= true
-        ></v-text-field>
-
-        <v-text-field
-          v-model = "jobtitle"
-          required
-          disabled=  true
-          label = "Job Title"
-          outlined = true
-          rounded= true
-        ></v-text-field>
-
-        <v-text-field
-          v-model = "username"
-          required
-          disabled=  true
-          label = "Mail"
-          outlined = true
-          rounded= true
-        ></v-text-field>
-
-        <v-text-field
-          v-model = "country"
-          required
-          disabled=  true
-          label = "Country"
-          outlined = true
-          rounded= true
-        ></v-text-field>
-
-        <v-textarea class="pt-5 purple-input" label="Explain your project"/>
-
-        <v-btn color="success">
-          Add your project
-        </v-btn>
-
-      </v-form>
-      </v-flex>
-    </v-layout>
-
-</template>
-//-->
 
 <script>
 export default {
@@ -302,7 +166,10 @@ export default {
       date: '',
       jobtitle: '',
       country: '',
-      projectText: ''
+      projectText: '',
+      city: '',
+      postalCode: '',
+      updateprofile: false
     }
   },
   validate () {
@@ -355,10 +222,37 @@ export default {
           console.log(erreur)
         })
       console.log('pass')
+    },
+    async updateProfileInformations () {
+      // connecter l'utilisateur
+      var that = this
+      this.axios({
+        method: 'post',
+        url: 'http://localhost:4000' + '/api/updateprofile',
+        data: {
+          projectText: this.projectText,
+          city: this.city,
+          postalCode: this.postalCode
+        }
+      })
+        .then(function (response) {
+          console.log(response)
+          that.updateprofile = true
+          localStorage.setItem('city', that.city)
+        })
     }
   }
+  // mounted () {
+  //   if (localStorage.city) {
+  //     this.city = localStorage.city
+  //   }
+  // },
+  // watch: {
+  //   projectText (newCity) {
+  //     localStorage.city = newCity
+  //   }
+  // }
 }
-
 </script>
 
 <style scoped>

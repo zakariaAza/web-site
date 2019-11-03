@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pt-10">
+  <v-container>
     <h1 class="pt-5 ContactTitle">Sign In to DCA Consulting Corporation</h1>
     <p class="grey--text">Sign in to access to your profile.</p>
    <v-card  class="mt-8 mx-auto " max-width="1000" height="520px" >
