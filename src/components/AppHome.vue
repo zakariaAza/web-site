@@ -11,10 +11,10 @@
 import VerticalSeparator from './VerticalSeparator'
 import Carousel from './Carousel'
 import TeamCard from './TeamCard'
+import AppFooter from './AppFooter'
 
 export default {
-  components: { Carousel, VerticalSeparator, TeamCard }
-
+  components: { Carousel, VerticalSeparator, TeamCard, AppFooter }
 }
 </script>
 
