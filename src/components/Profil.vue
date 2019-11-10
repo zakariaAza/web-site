@@ -112,30 +112,16 @@
                   xs12
                   text-xs-right
                 >
-                  <v-btn
-                    class="mx-0 font-weight-light"
-                    color="success"
-                    @click="updateProfileInformations"
-                  >
-                    Update Profile
-                  </v-btn>
-                  <div v-if="updateprofile" class="pt-5">
-                    <v-row justify="space-around">
-                      <h4 class="green--text">Thanks for updating your post ! </h4>
-                    </v-row>
-                  </div>
-                  <v-btn
-                    class="ml-5 font-weight-light"
-                    color="error"
-                    @click="deleteProject"
-                  >
-                    Delete Project
-                  </v-btn>
-                  <div v-if="deleteprofile" class="pt-5" >
-                    <v-row justify="space-around">
-                      <h4 class="red--text">Your project is delete from our database !</h4>
-                    </v-row>
-                  </div>
+                    <v-col>
+                    <div class="my-2">
+                      <v-btn class="mx-0 font-weight-light" color="success" @click="updateProfileInformations"> Update Profile</v-btn>
+                    </div>
+                    <div class="mt-5 pb-12 ">
+                      <v-btn class="font-weight-light" color="error" @click="deleteProject">Delete Project</v-btn>
+                    </div>
+                    <div id="message" v-if="deleteprofile"><h4 class="red--text">Your project is delete from our database ! </h4></div>
+                    <div v-if="updateprofile"><h4 class="green--text">Thanks for updating your post ! </h4></div>
+                    </v-col>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -153,12 +139,12 @@
             size="130"
           >
             <img
-              src="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTBZMuk4s3xE4oXZNZ6TNCbFeEhQY4Xmh13j8FWN2eBzGM41yy&s"
             >
           </v-avatar>
           <v-card-text class="text-xs-center">
             <v-row justify="space-around" class="pt-5"><h1>WELCOME {{ Firstname }} ! </h1></v-row>
-            <h6 class="category text-gray font-weight-thin mb-3 pt-3">{{ jobtitle}}</h6>
+            <h4 class="category text-gray font-weight-thin mb-3 pt-3">{{ jobtitle}}</h4>
             <h2 class="card-title font-weight-light">{{ Firstname }}  {{ Lastname }} </h2>
           </v-card-text>
         </material-card>
@@ -196,6 +182,10 @@ export default {
   created () {
     this.getProfileInformations()
   },
+  // delayMethod () {
+  //   this.updateprofile = true
+  //   delay(2000)
+  // },
   methods: {
     // Login back end
     async getProfileInformations () {
@@ -250,9 +240,9 @@ export default {
         .then(function (response) {
           console.log(response)
           that.updateprofile = true
-          localStorage.setItem('city', that.city)
-          localStorage.setItem('code', that.postalCode)
-          localStorage.setItem('project', that.projectText)
+          sessionStorage.setItem('city', that.city)
+          sessionStorage.setItem('postalCode', that.postalCode)
+          sessionStorage.setItem('projectText', that.projectText)
         })
     },
     async deleteProject () {
@@ -272,25 +262,25 @@ export default {
     }
   },
   mounted () {
-    if (localStorage.city) {
-      this.city = localStorage.city
+    if (sessionStorage.city) {
+      this.city = sessionStorage.city
     }
-    if (localStorage.postalCode) {
-      this.postalCode = localStorage.postalCode
+    if (sessionStorage.postalCode) {
+      this.postalCode = sessionStorage.postalCode
     }
-    if (localStorage.projectText) {
-      this.projectText = localStorage.projectText
+    if (sessionStorage.projectText) {
+      this.projectText = sessionStorage.projectText
     }
   },
   watch: {
     city (newCity) {
-      localStorage.city = newCity
+      sessionStorage.city = newCity
     },
     postalCode (newcode) {
-      localStorage.postalCode = newcode
+      sessionStorage.postalCode = newcode
     },
     projectText (newProject) {
-      localStorage.project = newProject
+      sessionStorage.projectText = newProject
     }
   }
 }

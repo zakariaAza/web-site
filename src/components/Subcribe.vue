@@ -244,7 +244,8 @@ export default {
       })
         .then((response) => {
           console.log(response)
-          alert('Thank you for suscribing !')
+          alert('Thank you for suscribing on DCA Consulting Company!')
+          this.$router.push('signin')
         }, (error) => {
           console.log(error)
         })
@@ -256,6 +257,11 @@ export default {
     },
     save (date) {
       this.$refs.menu.save(date)
+    },
+    validate () {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true
+      }
     }
   }
 }

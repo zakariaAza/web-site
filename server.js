@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'dist/')))
 const users = [{
   // admin by default
   username: 'admin@esiea.fr',
-  password: 'dca-corporation',
+  password: 'dca',
   Firstname: 'admin',
   Lastname: 'admin',
   date: '27/10/2019',
@@ -53,7 +53,7 @@ app.post('/api/login', (req, res) => {
       res.status(401)
     } else {
       // connect to the user
-      req.session.id = user.id // connect to the user and change the id
+      req.session.userId = user.id // connect to the user and change the id
       console.log('Connected')
       console.log(users)
       console.log(req.session.id)
@@ -151,7 +151,7 @@ app.post('/api/updateprofile', (req, res) => {
   })
   console.log(users)
   res.json({
-    message: 'profil update !',
+    message: 'profil update !'
   })
 })
 

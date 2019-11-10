@@ -96,6 +96,7 @@ export default {
           // eslint-disable-next-line eqeqeq
           if (status == '200') {
             localStorage.setItem('email', that.email)
+            sessionStorage.clear()
             that.$router.push('profil')
           }
         })
