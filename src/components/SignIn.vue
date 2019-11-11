@@ -40,7 +40,7 @@
       <v-btn small color="error" class="mr-4" @click="reset"> Clear</v-btn>
       <br><br>
 
-      <v-btn small to="/suscribe">Suscribe</v-btn>
+      <v-btn small to="/subscribe">Subscribe</v-btn>
       </v-form>
     </v-card>
     <AppFooter class="footerSpace"/>

@@ -18,7 +18,7 @@
 
       <template v-if="$vuetify.breakpoint.smAndUp">
         <v-spacer></v-spacer>
-<!-- Menu (suscribe/ sign in)-->
+<!-- Menu (subscribe/ sign in)-->
     <v-menu open-on-hover bottom offset-y>
       <template v-slot:activator="{ on }">
         <v-btn icon v-on="on">
@@ -27,7 +27,7 @@
       </template>
       <v-list>
         <v-list-item >
-            <v-btn color="#01579B" text to="/subcribe" >Subscribe</v-btn>
+            <v-btn color="#01579B" text to="/subscribe" >Subscribe</v-btn>
             <v-btn color="#01579B" text to="/signin">Sign in</v-btn>
         </v-list-item>
       </v-list>
@@ -43,7 +43,7 @@ export default {
     return {
       seen: true,
       LoginMenu: [
-        { text: 'Suscribe' },
+        { text: 'Subscribe' },
         { text: 'Sign in' }
       ]
     }

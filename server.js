@@ -72,7 +72,7 @@ app.get('/user/me', (req, res) => {
   }
 })
 
-// SUSCRIBE //
+// SUBSCRIBE //
 app.post('/api/subscribe', (req, res) => {
   const user = users.find(u => u.username === req.body.email)
   if (!user) {

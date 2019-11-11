@@ -1,7 +1,7 @@
 <template>
   <v-container >
     <h1 class="pt-5 ContactTitle">Subscribe to DCA Consulting Corporation</h1>
-    <p class="grey--text">Enter your name and email address, personal information and click “Suscribe”.</p>
+    <p class="grey--text">Enter your name and email address, personal information and click “Subscribe”.</p>
    <v-card  class="mt-8 pb-12 mx-auto " width="1100" height="1150px" >
       <v-img
         class="white--text"
@@ -164,7 +164,7 @@ export default {
   data () {
     return {
       // date
-      suscribe: false,
+      subscribe: false,
       e1: 'France',
       date: null,
       menu: false,
@@ -231,7 +231,7 @@ export default {
     }
   },
   methods: {
-    // Suscribe Back End
+    // Subscribe Back End
     async Submit () {
       this.validate()
       if (this.snackbar !== true) {

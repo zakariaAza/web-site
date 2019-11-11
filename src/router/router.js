@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import AppHome from '@/components/AppHome'
-import Suscribe from '@/components/Subcribe'
+import Subscribe from '@/components/Subscribe'
 import SignIn from '@/components/SignIn'
 import Contact from '@/components/Contact'
 import NotreEquipe from '@/components/NotreEquipe'
@@ -21,9 +21,9 @@ const router = new Router({
       component: AppHome
     },
     {
-      path: '/subcribe',
-      name: 'Subcribe',
-      component: Suscribe
+      path: '/subscribe',
+      name: 'Subscribe',
+      component: Subscribe
     },
     {
       path: '/signin',
@@ -70,7 +70,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   // access to component instance via `vm`
-  if (to.fullPath === '/signin' || to.fullPath === '/subcribe') {
+  if (to.fullPath === '/signin' || to.fullPath === '/subscribe') {
     console.log(localStorage.getItem('email'))
     if (localStorage.getItem('email') !== null) {
       next(
