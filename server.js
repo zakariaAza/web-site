@@ -53,7 +53,11 @@ app.post('/api/login', (req, res) => {
       res.status(401)
     } else {
       // connect to the user
+<<<<<<< HEAD
       req.session.userId = user.id // connect to the user and change the id
+=======
+      req.session.userId = user.username // connect to the user and change the id
+>>>>>>> Profil: Add/Remove project
       console.log('Connected')
       console.log(users)
       console.log(req.session.id)
@@ -70,6 +74,16 @@ app.post('/api/login', (req, res) => {
     res.json({
       message: 'you are already connected'
     })
+  }
+})
+
+app.get('/user/me', (req, res) => {
+  console.log(req.session.userId)
+  if (req.session.userId) {
+    console.log('ok')
+    res.send('ok')
+  } else {
+    res.status(401).send('not ok')
   }
 })
 
@@ -136,6 +150,8 @@ app.post('/api/profileInformations', (req, res) => {
       date: user.date,
       jobtitle: user.jobtitle,
       country: user.country,
+      city: user.city,
+      postalCode: user.postalCode,
       projectText: user.projectText
     })
     res.status(200)
@@ -144,6 +160,7 @@ app.post('/api/profileInformations', (req, res) => {
 
 // UPDATE //
 app.post('/api/updateprofile', (req, res) => {
+<<<<<<< HEAD
 
   users.push({
     projectText: req.body.projectText,
@@ -151,6 +168,13 @@ app.post('/api/updateprofile', (req, res) => {
     postalCode: req.body.postalCode
   })
   console.log(users)
+=======
+  const user = users.find(u => u.username === req.body.username)
+  user.projectText = req.body.projectText
+  user.city = req.body.city
+  user.postalCode = req.body.postalCode
+  console.log(user)
+>>>>>>> Profil: Add/Remove project
   res.json({
     message: 'profil update !'
   })
@@ -158,12 +182,10 @@ app.post('/api/updateprofile', (req, res) => {
 
 // DELETE //
 app.post('/api/deleteProject', (req, res) => {
-  users.push({
-    projectText: ''
-  })
-  console.log(users)
+  const user = users.find(u => u.username === req.body.username)
+  user.projectText = ''
   res.json({
-    message: 'Project delete on the serve side!'
+    message: 'project deleted !'
   })
 })
 

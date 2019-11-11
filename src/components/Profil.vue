@@ -101,7 +101,7 @@
                     type="number"/>
                 </v-flex>
                 <v-flex xs12>
-                  <v-textarea
+                  <v-textarea :key="componentKey"
                     v-model="projectText"
                     class="purple-input"
                     label="Notre projet"
@@ -112,16 +112,30 @@
                   xs12
                   text-xs-right
                 >
-                    <v-col>
-                    <div class="my-2">
-                      <v-btn class="mx-0 font-weight-light" color="success" @click="updateProfileInformations"> Update Profile</v-btn>
-                    </div>
-                    <div class="mt-5 pb-12 ">
-                      <v-btn class="font-weight-light" color="error" @click="deleteProject">Delete Project</v-btn>
-                    </div>
-                    <div id="message" v-if="deleteprofile"><h4 class="red--text">Your project is delete from our database ! </h4></div>
-                    <div v-if="updateprofile"><h4 class="green--text">Thanks for updating your post ! </h4></div>
-                    </v-col>
+                  <v-btn
+                    class="mx-0 font-weight-light"
+                    color="success"
+                    @click="updateProfileInformations"
+                  >
+                    Update Profile
+                  </v-btn>
+                  <v-btn
+                    class="ml-5 font-weight-light"
+                    color="error"
+                    @click="deleteProject"
+                  >
+                    Delete Project
+                  </v-btn>
+                  <div v-if="updateprofile" class="pt-5">
+                    <v-row justify="space-around">
+                      <h4 class="green--text">Thanks for updating your post ! </h4>
+                    </v-row>
+                  </div>
+                  <div v-if="deleteprofile" class="pt-5" >
+                    <v-row justify="space-around">
+                      <h4 class="red--text">Your project is delete from our database !</h4>
+                    </v-row>
+                  </div>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -146,6 +160,13 @@
             <v-row justify="space-around" class="pt-5"><h1>WELCOME {{ Firstname }} ! </h1></v-row>
             <h4 class="category text-gray font-weight-thin mb-3 pt-3">{{ jobtitle}}</h4>
             <h2 class="card-title font-weight-light">{{ Firstname }}  {{ Lastname }} </h2>
+            <v-btn
+              class="ml-5 font-weight-light"
+              color="error"
+              @click="logout"
+            >
+              Logout
+            </v-btn>
           </v-card-text>
         </material-card>
       </v-flex>
@@ -168,7 +189,8 @@ export default {
       city: '',
       postalCode: '',
       updateprofile: false,
-      deleteprofile: false
+      deleteprofile: false,
+      componentKey: 0
     }
   },
   validate () {
@@ -216,6 +238,8 @@ export default {
             that.jobtitle = response.data.jobtitle
             that.country = response.data.country
             that.projectText = response.data.projectText
+            that.city = response.data.city
+            that.postalCode = response.data.postalCode
             console.log(that.Firstname)
             console.log(that.jobtitle)
           }
@@ -233,6 +257,7 @@ export default {
         method: 'post',
         url: 'http://localhost:4000' + '/api/updateprofile',
         data: {
+          username: this.username,
           projectText: this.projectText,
           city: this.city,
           postalCode: this.postalCode
@@ -241,9 +266,6 @@ export default {
         .then(function (response) {
           console.log(response)
           that.updateprofile = true
-          sessionStorage.setItem('city', that.city)
-          sessionStorage.setItem('postalCode', that.postalCode)
-          sessionStorage.setItem('projectText', that.projectText)
         })
     },
     async deleteProject () {
@@ -253,13 +275,20 @@ export default {
         method: 'post',
         url: 'http://localhost:4000' + '/api/deleteProject',
         data: {
-          projectText: this.projectText
+          username: this.username
         }
       })
         .then(function (response) {
-          console.log(response)
-          that.deleteprofile = true
+          console.log('testtttt')
+          that.projectText = ''
+          that.componentKey += 1
+          that.updateprofile = false
         })
+    },
+    async logout () {
+      console.log('break')
+      localStorage.removeItem('email')
+      this.$router.push('/')
     }
   },
   mounted () {

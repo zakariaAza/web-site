@@ -13,7 +13,7 @@ import Profil from '@/components/Profil'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -67,3 +67,31 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  // access to component instance via `vm`
+  console.log(to.fullPath)
+  if (to.fullPath === '/signin' || to.fullPath === '/subcribe') {
+    console.log(localStorage.getItem('email'))
+    if (localStorage.getItem('email') !== null) {
+      next(
+        { name: 'profil' }
+      )
+    } else {
+      next()
+    }
+  } else if (to.fullPath === '/profil') {
+    console.log('break22')
+    console.log(localStorage.getItem('email'))
+    if (localStorage.getItem('email') === null) {
+      console.log('break23')
+      next({ name: 'SignIn' })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
+})
+
+export default router

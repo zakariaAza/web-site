@@ -4,14 +4,22 @@
       <Toolbar/>
       <router-view></router-view>
     </v-content>
+<<<<<<< HEAD
       <!-- <AppFooter/> -->
 
+=======
+    <v-content>
+    </v-content>
+>>>>>>> Profil: Add/Remove project
   </v-app>
 </template>
 
 <script>
 import Toolbar from './components/Toolbar'
+<<<<<<< HEAD
 // import AppFooter from './components/AppFooter'
+=======
+>>>>>>> Profil: Add/Remove project
 
 export default {
   components: { Toolbar },
