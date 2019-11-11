@@ -26,10 +26,10 @@
                   <v-text-field
                       v-model = "jobtitle"
                       required
-                      disabled=  true
+                      v-bind:disabled=  "true"
                       label = "Job Title"
-                      outlined = true
-                      rounded= true
+                      v-bind:outlined = true
+                      v-bind:rounded= true
                       />
                 </v-flex>
                 <v-flex
@@ -39,10 +39,10 @@
                     <v-text-field
                       v-model = "username"
                       required
-                      disabled= true
+                      v-bind:disabled= true
                       label = "Mail"
-                      outlined = true
-                      rounded= true
+                      v-bind:outlined = true
+                      v-bind:rounded= true
                     ></v-text-field>
                 </v-flex>
                 <v-flex
@@ -52,10 +52,10 @@
                     <v-text-field
                       required
                       v-model = "Firstname"
-                      disabled=  true
+                      v-bind:disabled=  true
                       label = "First Name"
-                      outlined = true
-                      rounded= true
+                      v-bind:outlined = true
+                      v-bind:rounded= true
                     ></v-text-field>
                 </v-flex>
                 <v-flex
@@ -65,10 +65,10 @@
                     <v-text-field
                       v-model = "Lastname"
                       required
-                      disabled= true
+                      v-bind:disabled= true
                       label = "Last Name"
-                      outlined = true
-                      rounded= true
+                      v-bind:outlined = true
+                      v-bind:rounded= true
                     ></v-text-field>
                 </v-flex>
                 <v-flex
@@ -77,10 +77,10 @@
                   <v-text-field
                     v-model = "country"
                       required
-                      disabled=  true
+                      v-bind:disabled=  true
                       label = "Country"
-                      outlined = true
-                      rounded= true
+                      v-bind:outlined = true
+                      v-bind:rounded= true
                       />
                 </v-flex>
                 <v-flex
@@ -104,7 +104,7 @@
                   <v-textarea :key="componentKey"
                     v-model="projectText"
                     class="purple-input"
-                    label="Notre projet"
+                    label="Soumettez-nous votre projet ici."
                     value="Soumettez-nous votre projet ici."
                   />
                 </v-flex>
@@ -196,7 +196,6 @@ export default {
   validate () {
     if (this.$refs.form.validate()) {
       this.snackbar = true
-      console.log(this.email, this.password) // to send the data to the back end
     }
   },
   reset () {
@@ -214,7 +213,6 @@ export default {
     async getProfileInformations () {
       var emailStored = localStorage.getItem('email')
       var that = this
-      console.log('Mail stored : ' + localStorage.getItem('email'))
       // connecter l'utilisateur
       this.axios({
         method: 'post',
@@ -225,12 +223,10 @@ export default {
       })
         .then(function (response) {
         // On traite la suite une fois la réponse obtenue
-          console.log(response)
           const status = JSON.parse(response.data.status)
           // redirect logic
           // eslint-disable-next-line eqeqeq
           if (status == '200') {
-            console.log('Profile retrieveeeeedddd')
             that.Firstname = response.data.Firstname
             that.Lastname = response.data.Lastname
             that.username = response.data.username
@@ -240,15 +236,11 @@ export default {
             that.projectText = response.data.projectText
             that.city = response.data.city
             that.postalCode = response.data.postalCode
-            console.log(that.Firstname)
-            console.log(that.jobtitle)
           }
         })
         .catch(function (erreur) {
           // On traite ici les erreurs éventuellement survenues
-          console.log(erreur)
         })
-      console.log('pass')
     },
     async updateProfileInformations () {
       // connecter l'utilisateur
@@ -264,7 +256,6 @@ export default {
         }
       })
         .then(function (response) {
-          console.log(response)
           that.updateprofile = true
         })
     },
@@ -279,14 +270,12 @@ export default {
         }
       })
         .then(function (response) {
-          console.log('testtttt')
           that.projectText = ''
           that.componentKey += 1
           that.updateprofile = false
         })
     },
     async logout () {
-      console.log('break')
       localStorage.removeItem('email')
       this.$router.push('/')
     }

@@ -93,7 +93,7 @@
         </v-col>
       </v-row>
 
-      <v-card-text class=" pt-10 text-center" > Vous êtes :</v-card-text>
+      <v-card-text class=" pt-10 text-left" > Vous êtes :</v-card-text>
 
       <v-radio-group column class="pl-12">
         <v-radio label="Une femme"></v-radio>
@@ -252,7 +252,6 @@ export default {
         }
       })
         .then((response) => {
-          console.log(response)
           alert('Thank you for suscribing on DCA Consulting Company!')
           this.$router.push('signin')
         }, (error) => {

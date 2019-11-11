@@ -1,10 +1,10 @@
 <template>
     <v-container >
             <v-flex>
-                <v-span class="text-center blue--text text--darken-4" v-for="(text, index) in texts" :key="index">
+                <span class="text-center blue--text text--darken-4" name="a" v-for="(text, index) in texts" :key="index">
                     {{text}}
                     <v-divider v-if="index != texts.length -1" class="mx-4" vertical color="black" style="display: inline;"></v-divider>
-                </v-span>
+                </span>
             </v-flex>
     </v-container>
 </template>

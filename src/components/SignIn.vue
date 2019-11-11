@@ -71,7 +71,6 @@ export default {
     validate () {
       if (this.$refs.form.validate()) {
         this.snackbar = true
-        console.log(this.email, this.password) // to send the data to the back end
       }
     },
     reset () {
@@ -93,7 +92,6 @@ export default {
       })
         .then(function (response) {
         // On traite la suite une fois la réponse obtenue
-          console.log(response)
           const status = JSON.parse(response.data.status)
           // redirect logic
           // eslint-disable-next-line eqeqeq

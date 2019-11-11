@@ -40,27 +40,16 @@ const users = [{
 
 // LOGIN //
 app.post('/api/login', (req, res) => {
-  console.log('req.body', req.body)
-  console.log('req.query', req.query)
   if (!req.session.userId) {
     const user = users.find(u => u.username === req.body.email && u.password === req.body.password)
     if (!user) {
-      console.log(users)
-      console.log('fail connexion')
       res.json({
         message: 'did not find any user with these credentials'
       })
       res.status(401)
     } else {
       // connect to the user
-<<<<<<< HEAD
-      req.session.userId = user.id // connect to the user and change the id
-=======
       req.session.userId = user.username // connect to the user and change the id
->>>>>>> Profil: Add/Remove project
-      console.log('Connected')
-      console.log(users)
-      console.log(req.session.id)
       res.json({
         message: 'connected',
         status: 200
@@ -68,8 +57,6 @@ app.post('/api/login', (req, res) => {
       res.status(200)
     }
   } else {
-    console.log('you are already connected')
-    console.log(users)
     res.status(401)
     res.json({
       message: 'you are already connected'
@@ -78,28 +65,12 @@ app.post('/api/login', (req, res) => {
 })
 
 app.get('/user/me', (req, res) => {
-  console.log(req.session.userId)
   if (req.session.userId) {
-    console.log('ok')
     res.send('ok')
   } else {
     res.status(401).send('not ok')
   }
 })
-
-// app.get('/api/logout', (req, res) => {
-//   if (!req.session.userId) {
-//     res.status(401)
-//     res.json({
-//       message: 'you are already disconnected'
-//     })
-//   } else {
-//     req.session.userId = 0
-//     res.json({
-//       message: 'you are now disconnected'
-//     })
-//   }
-// })
 
 // SUSCRIBE //
 app.post('/api/subscribe', (req, res) => {
@@ -114,7 +85,6 @@ app.post('/api/subscribe', (req, res) => {
       jobtitle: req.body.jobtitle,
       country: req.body.country
     })
-    console.log(users)
     res.json({
       message: 'Success'
     })
@@ -128,19 +98,12 @@ app.post('/api/subscribe', (req, res) => {
 // PROFILE INFORMATION //
 app.post('/api/profileInformations', (req, res) => {
   const user = users.find(u => u.username === req.body.email)
-  console.log('getProfileLaunched')
-  console.log(req.body)
   if (!user) {
-    console.log(users)
-    console.log('failed to retrieve profile informations')
     res.json({
       message: 'did not find any user with this mail'
     })
     res.status(401)
   } else {
-    console.log('User informations retrieved')
-    console.log(users)
-    console.log(req.session.id)
     res.json({
       message: 'User informations retrieved',
       status: 200,
@@ -160,21 +123,10 @@ app.post('/api/profileInformations', (req, res) => {
 
 // UPDATE //
 app.post('/api/updateprofile', (req, res) => {
-<<<<<<< HEAD
-
-  users.push({
-    projectText: req.body.projectText,
-    city: req.body.city,
-    postalCode: req.body.postalCode
-  })
-  console.log(users)
-=======
   const user = users.find(u => u.username === req.body.username)
   user.projectText = req.body.projectText
   user.city = req.body.city
   user.postalCode = req.body.postalCode
-  console.log(user)
->>>>>>> Profil: Add/Remove project
   res.json({
     message: 'profil update !'
   })

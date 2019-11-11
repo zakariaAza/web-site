@@ -70,7 +70,6 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   // access to component instance via `vm`
-  console.log(to.fullPath)
   if (to.fullPath === '/signin' || to.fullPath === '/subcribe') {
     console.log(localStorage.getItem('email'))
     if (localStorage.getItem('email') !== null) {
@@ -81,10 +80,8 @@ router.beforeEach((to, from, next) => {
       next()
     }
   } else if (to.fullPath === '/profil') {
-    console.log('break22')
     console.log(localStorage.getItem('email'))
     if (localStorage.getItem('email') === null) {
-      console.log('break23')
       next({ name: 'SignIn' })
     } else {
       next()
