@@ -54,7 +54,7 @@ export default {
   components: { AppFooter },
   data () {
     return {
-      url: '', // 'http://localhost:4000',
+      url: 'http://localhost:3000',
       valid: true,
       email: '',
       emailRules: [
