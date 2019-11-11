@@ -161,7 +161,7 @@
             <h4 class="category text-gray font-weight-thin mb-3 pt-3">{{ jobtitle}}</h4>
             <h2 class="card-title font-weight-light">{{ Firstname }}  {{ Lastname }} </h2>
             <v-btn
-              class="ml-5 font-weight-light"
+              class="ml-5 mt-5 font-weight-light"
               color="error"
               @click="logout"
             >
@@ -190,7 +190,8 @@ export default {
       postalCode: '',
       updateprofile: false,
       deleteprofile: false,
-      componentKey: 0
+      componentKey: 0,
+      url: 'http://localhost:4000'
     }
   },
   validate () {
@@ -216,7 +217,7 @@ export default {
       // connecter l'utilisateur
       this.axios({
         method: 'post',
-        url: 'http://localhost:4000' + '/api/profileInformations',
+        url: this.url + '/api/profileInformations',
         data: {
           email: emailStored
         }
@@ -247,7 +248,7 @@ export default {
       var that = this
       this.axios({
         method: 'post',
-        url: 'http://localhost:4000' + '/api/updateprofile',
+        url: this.url + '/api/updateprofile',
         data: {
           username: this.username,
           projectText: this.projectText,
@@ -264,7 +265,7 @@ export default {
       var that = this
       this.axios({
         method: 'post',
-        url: 'http://localhost:4000' + '/api/deleteProject',
+        url: this.url + '/api/deleteProject',
         data: {
           username: this.username
         }
