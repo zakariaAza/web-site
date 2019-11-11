@@ -191,7 +191,7 @@ export default {
       updateprofile: false,
       deleteprofile: false,
       componentKey: 0,
-      url: 'http://localhost:3000'
+      url: '' // 'http://localhost:3000'
     }
   },
   validate () {
