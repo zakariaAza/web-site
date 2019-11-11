@@ -205,10 +205,6 @@ export default {
   created () {
     this.getProfileInformations()
   },
-  // delayMethod () {
-  //   this.updateprofile = true
-  //   delay(2000)
-  // },
   methods: {
     // Login back end
     async getProfileInformations () {
