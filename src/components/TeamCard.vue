@@ -8,7 +8,7 @@
               </v-avatar>
             </v-responsive>
         </v-flex>
-        <v-flex xs8 md4>
+         <v-flex xs6 md4>
           <v-card outlined  width="600" height="250px">
             <v-col class="text-center" cols="12">
                   <h3 class="size blue--text text--darken-4">Zakaria AZAKKOUR</h3>
@@ -19,7 +19,7 @@
             </v-card-text>
             </v-card>
         </v-flex>
-        <v-flex xs8 md4>
+         <v-flex xs6 md4>
           <v-card outlined  width="600" height="250px">
             <v-col class="text-center" cols="12">
                   <h3 class="size blue--text text--darken-4">Desmond CONTEH</h3>
@@ -30,7 +30,7 @@
             </v-card-text>
             </v-card>
         </v-flex>
-        <v-flex xs8 md4>
+         <v-flex xs6 md4>
           <v-card outlined  width="600" height="250px">
             <v-col class="text-center" cols="12">
                   <h3 class="size blue--text text--darken-4">Cedric SOUMAILA</h3>

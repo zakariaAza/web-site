@@ -164,6 +164,7 @@ export default {
   data () {
     return {
       // date
+      url: '', // 'http://localhost:4000'
       subscribe: false,
       e1: 'France',
       date: null,
@@ -240,7 +241,7 @@ export default {
 
       this.axios({
         method: 'post',
-        url: 'http://localhost:4000' + '/api/subscribe',
+        url: this.url + '/api/subscribe',
         data: {
           email: this.email,
           password: this.password,

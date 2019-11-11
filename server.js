@@ -20,7 +20,10 @@ app.use(session({
 }))
 app.use(morgan('dev'))
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors({
+  credentials: true,
+  origin: 'http://localhost:8080'
+}))
 const path = require('path')
 app.use(express.static(path.join(__dirname, 'dist/')))
 
@@ -143,5 +146,5 @@ app.post('/api/deleteProject', (req, res) => {
 
 const port = process.env.PORT || 4000
 app.listen(port, () => {
-  console.log(`listening on ${port}`)
+  console.log(`listening on : ${port}`)
 })

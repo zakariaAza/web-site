@@ -190,7 +190,8 @@ export default {
       postalCode: '',
       updateprofile: false,
       deleteprofile: false,
-      componentKey: 0
+      componentKey: 0,
+      url: '' // 'http://localhost:4000'
     }
   },
   validate () {
@@ -216,7 +217,7 @@ export default {
       // connecter l'utilisateur
       this.axios({
         method: 'post',
-        url: 'http://localhost:4000' + '/api/profileInformations',
+        url: this.url + '/api/profileInformations',
         data: {
           email: emailStored
         }
@@ -247,7 +248,7 @@ export default {
       var that = this
       this.axios({
         method: 'post',
-        url: 'http://localhost:4000' + '/api/updateprofile',
+        url: this.url + '/api/updateprofile',
         data: {
           username: this.username,
           projectText: this.projectText,
@@ -264,7 +265,7 @@ export default {
       var that = this
       this.axios({
         method: 'post',
-        url: 'http://localhost:4000' + '/api/deleteProject',
+        url: this.url + '/api/deleteProject',
         data: {
           username: this.username
         }
