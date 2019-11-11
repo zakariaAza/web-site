@@ -43,12 +43,15 @@
       <v-btn small to="/suscribe">Suscribe</v-btn>
       </v-form>
     </v-card>
+    <AppFooter class="footerSpace"/>
   </v-container>
 </template>
 
 <script>
+import AppFooter from './AppFooter'
 
 export default {
+  components: { AppFooter },
   data () {
     return {
       url: 'http://localhost:4000',
@@ -116,5 +119,9 @@ export default {
     position:absolute;
     left: 0;
     right: 0;
+}
+.footerSpace{
+  margin-top: 1cm;
+  background: inherit
 }
 </style>

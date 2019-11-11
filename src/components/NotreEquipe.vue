@@ -76,11 +76,14 @@
           </v-flex>
     </v-layout>
   </v-row>
+  <AppFooter/>
   </v-app>
 </template>
 
 <script>
+import AppFooter from './AppFooter'
 export default {
+  components: { AppFooter }
 }
 </script>
 

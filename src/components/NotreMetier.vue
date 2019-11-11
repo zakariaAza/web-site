@@ -99,8 +99,17 @@
              </v-card>
           </v-flex>
         </v-layout>
+        <AppFooter/>
     </v-app>
 </template>
+
+<script>
+import AppFooter from './AppFooter'
+
+export default {
+  components: { AppFooter }
+}
+</script>
 
 <style scoped>
 .img {

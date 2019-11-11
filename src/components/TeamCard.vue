@@ -2,13 +2,11 @@
     <v-layout row wrap class="pb-8 pl-12">
         <v-row justify="space-around">
           <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
-          <v-card flat class="text-xs-center ma-3">
             <v-responsive class="pt-4">
               <v-avatar size="200">
                 <img :src="person.avatar">
               </v-avatar>
             </v-responsive>
-          </v-card>
         </v-flex>
         <v-flex xs8 md4>
           <v-card outlined  width="600" height="250px">

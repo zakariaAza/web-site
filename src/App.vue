@@ -1,12 +1,11 @@
 <template>
-  <v-app app class ="app" min-height= "0">
+  <v-app app class ="app" min-height= "0" wrap>
     <v-content min-height= "0">
       <Toolbar/>
       <router-view></router-view>
     </v-content>
-    <v-content>
       <!-- <AppFooter/> -->
-    </v-content>
+
   </v-app>
 </template>
 
@@ -31,8 +30,11 @@ export default {
   }
 </style>
 
-<style scoped>
+<style>
   #v-application--wrap{
     min-height: 0;
+  }
+  .content{
+    padding: 0px;
   }
 </style>

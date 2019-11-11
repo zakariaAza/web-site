@@ -144,6 +144,7 @@ app.post('/api/profileInformations', (req, res) => {
 
 // UPDATE //
 app.post('/api/updateprofile', (req, res) => {
+
   users.push({
     projectText: req.body.projectText,
     city: req.body.city,

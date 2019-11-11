@@ -1,5 +1,6 @@
 <template>
-    <v-container >
+<v-app>
+  <v-container >
       <h3 class="pt-5 blue--text text--darken-4">A propos de DCA Consulting corporation</h3>
       <h1 class="pt-5 ContactTitle">Contactez-Nous</h1>
       <p class="pt-3 pb-10 TextContact">
@@ -22,7 +23,7 @@
              <v-card outlined  width="600" height="250px">
               <v-card-title class="size blue--text text--darken-4"> <strong>Demande de mission de conseil</strong> </v-card-title>
               <v-card-text>
-                <v-btn text class="padding size2" color="blue darken-4"><v-icon>mdi-menu-right </v-icon>Soumettre votre requête</v-btn>
+                <v-btn text class="padding size2" color="blue darken-4" to="/signin"><v-icon>mdi-menu-right </v-icon>Soumettre votre requête</v-btn>
               </v-card-text>
              </v-card>
           </v-flex>
@@ -85,10 +86,15 @@
       </v-col>
     </v-row>
     </v-container>
+    <AppFooter class="pa-0"/>
+</v-app>
 </template>
 
 <script>
+import AppFooter from './AppFooter'
+
 export default {
+  components: { AppFooter },
   data () {
     return {
       contact: [

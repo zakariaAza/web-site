@@ -2,6 +2,7 @@
 <v-footer
     dark
     padless
+    tile
   >
     <v-card
       flat

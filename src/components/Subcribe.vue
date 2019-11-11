@@ -2,7 +2,7 @@
   <v-container >
     <h1 class="pt-5 ContactTitle">Subscribe to DCA Consulting Corporation</h1>
     <p class="grey--text">Enter your name and email address, personal information and click “Suscribe”.</p>
-   <v-card  class="mt-8 mx-auto " width="1100" height="1150px" >
+   <v-card  class="mt-8 pb-12 mx-auto " width="1100" height="1150px" >
       <v-img
         class="white--text"
         height="200px"
@@ -152,11 +152,15 @@ Some terms are defined throughout this Policy. Simply hover over the terms in bo
       </router-link>
       </v-form>
     </v-card>
+    <AppFooter class="footerSpace"/>
   </v-container>
 </template>
 
 <script>
+import AppFooter from './AppFooter'
+
 export default {
+  components: { AppFooter },
   data () {
     return {
       // date
@@ -229,6 +233,11 @@ export default {
   methods: {
     // Suscribe Back End
     async Submit () {
+      this.validate()
+      if (this.snackbar !== true) {
+        return
+      }
+
       this.axios({
         method: 'post',
         url: 'http://localhost:4000' + '/api/subscribe',
@@ -266,3 +275,10 @@ export default {
   }
 }
 </script>
+
+<style  scoped>
+.footerSpace{
+  margin-top: 1cm;
+  background: inherit
+}
+</style>

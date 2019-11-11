@@ -4,16 +4,19 @@
         <p class="text-center"> Etabli en France depuis 2019, notre cabinet conseille les directions générales de grandes entreprises françaises et internationales, ainsi que celles d’institutions publiques et d’organisations à but non lucratif. Le cabinet inscrit l’accompagnement de ses clients dans le long terme. Il les aide à élaborer les orientations stratégiques et à mettre en œuvre les changements qui leur permettent d’améliorer durablement leurs performances. Notre cabinet, offre à ses clients les compétences de 3 grands consultants experts ..</p>
         <VerticalSeparator align="center" justify="center"/>
         <TeamCard class="team" align="center" justify="center"/>
-  </v-app>
+        <AppFooter class="footer"/>
+
+   </v-app>
 </template>
 
 <script>
 import VerticalSeparator from './VerticalSeparator'
 import Carousel from './Carousel'
 import TeamCard from './TeamCard'
+import AppFooter from './AppFooter'
 
 export default {
-  components: { Carousel, VerticalSeparator, TeamCard }
+  components: { Carousel, VerticalSeparator, TeamCard, AppFooter }
 }
 </script>
 
@@ -34,5 +37,8 @@ export default {
     font-size: 20px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .footer{
+    top: 640px !important;
   }
 </style>
