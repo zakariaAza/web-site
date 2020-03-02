@@ -1,4 +1,4 @@
-# Web site DCA Consulting (Utiliser le site sur firefox)
+# Web site DCA Consulting
 
 ## Membres de l'équipe (4A CFA)
 
